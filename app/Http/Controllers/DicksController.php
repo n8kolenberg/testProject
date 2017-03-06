@@ -23,6 +23,12 @@ class DicksController extends Controller
     }
 
     public function store() {
+
+        $this->validate(request(), [
+            'name' => 'required',
+            'body' => 'required'
+        ]);
+
         Dick::create(request(['name', 'body']));
 
         return redirect('/dicks');

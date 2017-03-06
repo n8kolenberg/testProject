@@ -1,5 +1,6 @@
 @extends('layouts.master')
 
+@section('content')
 <form method="POST" action="/dicks">
     {{csrf_field()}}
     <label class="label">Name</label>
@@ -20,6 +21,11 @@
         <p class="control">
             <button class="button is-link">Cancel</button>
         </p>
+
     </div>
+
+@include('layouts.errors')
+
 </form>
 
+@stop
