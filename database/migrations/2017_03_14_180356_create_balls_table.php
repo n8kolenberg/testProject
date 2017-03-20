@@ -15,6 +15,7 @@ class CreateBallsTable extends Migration
     {
         Schema::create('balls', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id');
             $table->integer('dick_id');
             $table->string('body');
 

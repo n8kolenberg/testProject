@@ -15,6 +15,7 @@ class CreateDicksTable extends Migration
     {
         Schema::create('dicks', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id');
             $table->string('name');
             $table->string('body');
             $table->timestamps();

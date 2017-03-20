@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Dick;
+use App\Ball;
 
 class DicksController extends Controller
 {
@@ -13,13 +14,11 @@ class DicksController extends Controller
     }
 
     public function show(Dick $dick) {
-
         return view('dickshow', compact('dick'));
     }
 
     public function create() {
         return view('dicks.create');
-
     }
 
     public function store() {
