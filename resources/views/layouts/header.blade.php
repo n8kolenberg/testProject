@@ -13,15 +13,19 @@
             <span></span>
           </span>
                     <div class="nav-right nav-menu">
+
+                        @if(Auth::check())
                         <a class="nav-item is-active">
-                            Home
+                            {{Auth::user()->name}}
                         </a>
+                        @endif
                         <a class="nav-item">
                             Examples
                         </a>
-                        <a class="nav-item">
-                            Documentation
+                        <a class="nav-item" href="/logout">
+                            Logout
                         </a>
+
                         <span class="nav-item">
               <a class="button is-info is-outlined is-inverted">
                 <span class="icon">

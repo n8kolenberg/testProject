@@ -37,4 +37,23 @@ class User extends Authenticatable
         return $this->hasMany(Ball::class);
     }
 
+    public function setPasswordAttribute($password)
+    {
+        if (\Hash::needsRehash($password)) {
+            $password = \Hash::make($password);
+        }
+        $this->attributes['password'] = $password;
+    }
+
+    public function publish(Dick $dick) {
+        $this->dicks()->save($dick);
+//        Dick::create([
+//            'name' => request('name'),
+//            'body' => request('body'),
+//            'user_id' => auth()->id()
+//        ]);
+    }
+
+
+
 }

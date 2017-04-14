@@ -24,6 +24,7 @@
                         <p><a href="/dicks/{{$dick->id}}">{{$dick->body}}</a></p>
                         <br>
                         <p class="has-text-centered"><a class="button is-info is-outlined" href="/dicks/{{$dick->id}}">{{$dick->name}}</a></p>
+                        <p> Added {{$dick->created_at->diffForHumans()}} by {{$dick->user_id}}</p>
                     </div>
 
                 </div>
